@@ -77,5 +77,3 @@ struct my_structure* struct_init(struct my_structure *table)
 
 }
 
-/* First pointer to point to the structure (linked list) and the other to point to the node inside the structure */
-/* so to access a node in the list i need two pointer , first to the list then to node in the list */
