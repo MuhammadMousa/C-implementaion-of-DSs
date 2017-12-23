@@ -212,7 +212,7 @@ int fibonacci_one(int index)
 
 
 /*
- * Function:  fibonacci_one
+ * Function:  fibonacci_two
  * --------------------
  *  finds the Fibonacci series number that corresponds to a given index in the series
  *    
