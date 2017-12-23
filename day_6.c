@@ -41,6 +41,18 @@ int main()
 	return 0;
 }
 
+/*
+ * Function:  get_value
+ * --------------------
+ *  
+ *    
+ *  arr_elements: the array that contains the elements
+ *  arr_size : the length of the array  
+ *  sum: the sum of the pair
+ *
+ *  returns: SUCCESS, which means that the value is returned successfuly, or 
+ *           FAIL, if the value failed to return
+ */
 int get_value(struct my_structure *table, int index, int *returned_value)
 {
 	if ((table->all_values->last_update) > (table->entries[index]->last_update)) {
@@ -53,12 +65,33 @@ int get_value(struct my_structure *table, int index, int *returned_value)
 	return FAIL;
 }
 
+/*
+ * Function:  set_value
+ * --------------------
+ *  
+ *    
+ *  arr_elements: the array that contains the elements
+ *  arr_size : the length of the array  
+ *  sum: the sum of the pair
+ *
+ */
 int set_value(struct my_structure *table, int index, int value)
 {
 	table->entries[index]->value = value;
 	table->entries[index]->last_update = table->update++;
 }
 
+
+/*
+ * Function:  set_all
+ * --------------------
+ *  
+ *    
+ *  arr_elements: the array that contains the elements
+ *  arr_size : the length of the array  
+ *  sum: the sum of the pair
+ *
+ */
 int set_all(struct my_structure *table, int value)
 {
 	table->all_values->value = value;
@@ -66,6 +99,16 @@ int set_all(struct my_structure *table, int value)
 }
 
 
+/*
+ * Function:  struct_init
+ * --------------------
+ *  
+ *    
+ *  arr_elements: the array that contains the elements
+ *  arr_size : the length of the array  
+ *  sum: the sum of the pair
+ *
+ */
 struct my_structure* struct_init(struct my_structure *table)
 {
 	table = (struct my_structure*) malloc(sizeof(struct my_structure));
