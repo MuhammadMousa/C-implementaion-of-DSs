@@ -17,7 +17,7 @@ int main()
 
 	/* Testing ... */
 
-	  int value;   /* the address of returned value */
+	    int value;   /* the address of returned value */
       int status;  /* successful or not */
       int data;    /* to be inserted */
       enqueue(10);

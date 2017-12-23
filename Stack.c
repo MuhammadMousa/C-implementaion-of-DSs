@@ -10,23 +10,8 @@ void test_print();
 int gTop = -1;
 int gStack[STACK_SIZE];
 
-typedef struct Stack {
-  int *array;
-
-}Stack;
-
 int main()
 {
-
-    int value;
-    int status;
-    int data;
-      Stack s;
-      int i;
-      int n;
-      i = 2;
-      printf("%d  %d  %d",i,i,++i);
-
 
 
 	return 0;
