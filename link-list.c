@@ -78,7 +78,7 @@ int main()
    insert(&list_2->head,n9); 
    insert(&list_2->head,n10);
 
-   printf("%x %x\n",n1,n1->next);
+   printf("%d\n",is_palindrome(&list_1->head) );
    
 
 
