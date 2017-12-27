@@ -74,11 +74,11 @@ int main()
 
    insert(&list_2->head,n6);
    insert(&list_2->head,n7); 
-   insert(&list_2->head,n8); 
+   insert(&list_2->head,n3); 
    insert(&list_2->head,n9); 
    insert(&list_2->head,n10);
 
-   printf("%d\n",is_palindrome(&list_1->head) );
+   printf("%x , %x\n",list_2->head->next->next, list_2->head->next->next ); // there is an intersection
    
 
 
