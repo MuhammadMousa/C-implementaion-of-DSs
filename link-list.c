@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #define SUCCESS 0
 #define FAIL 1
 
@@ -7,13 +7,13 @@ struct node_t
 {
 	int data;
 	struct node_t* next;
- 	
+
 };
 
 struct linked_list
 {
 	struct node_t *head;
-	
+
 };
 
 int insert(struct node_t**, struct node_t*);
@@ -45,14 +45,14 @@ void bubbleSort(struct node_t**);
 
 int main()
 {
-	
+
     struct linked_list *list_1 = create_list();
     struct linked_list *list_2 = create_list();
     struct linked_list *list_3 = create_list();
     struct node_t *n1, *n2, *n3, *n4, *n5;
     struct node_t *n6, *n7, *n8, *n9, *n10;
-    
-    
+
+
 
     n1 = creat_node_t(25);
     n2 = creat_node_t(77);
@@ -67,19 +67,19 @@ int main()
     n10 = creat_node_t(540);
 
    insert(&list_1->head,n1);
-   insert(&list_1->head,n2); 
-   insert(&list_1->head,n3); 
-   insert(&list_1->head,n4); 
+   insert(&list_1->head,n2);
+   insert(&list_1->head,n3);
+   insert(&list_1->head,n4);
    insert(&list_1->head,n5);
 
    insert(&list_2->head,n6);
-   insert(&list_2->head,n7); 
-   insert(&list_2->head,n3); 
-   insert(&list_2->head,n9); 
+   insert(&list_2->head,n7);
+   insert(&list_2->head,n3);
+   insert(&list_2->head,n9);
    insert(&list_2->head,n10);
 
-   printf("%x , %x\n",list_2->head->next->next, list_2->head->next->next ); // there is an intersection
-   
+   printf("%x , %x\n",list_2->head->next->next, list_2->head->next->next ); // there is an intersection (they point to the same address)
+
 
 
 	return 0;
@@ -87,7 +87,7 @@ int main()
 
 
 /*
- *is_empty() check if the list is empty or not 
+ *is_empty() check if the list is empty or not
  *returns 1 if it is empty and 0 otherwise.
 */
 int is_empty(struct node_t **list_head)
@@ -133,16 +133,16 @@ int insert_after(struct node_t **list_head, struct node_t* new_node, int node_ke
 		if (temp->data == node_key) {
     		temp->next = new_node;
     		new_node->next = NULL;
-    		return SUCCESS;	
-    	} 
+    		return SUCCESS;
+    	}
 	} else {
     while(temp != NULL) {
     	temp2 = temp->next;
     	if (temp->data == node_key) {
     		temp->next = new_node;
-    		new_node->next = temp2;	
+    		new_node->next = temp2;
     		return SUCCESS;
-    	} 
+    	}
     	temp = temp->next;
     	}
  	}
@@ -162,13 +162,13 @@ int delete(struct node_t **list_head, struct node_t* target_node_t)
 		return FAIL;
 	} else if (temp->data == target_node_t->data) {
 			temp = temp->next;
-		    return SUCCESS;	
+		    return SUCCESS;
 	} else {  /*otherwise...*/
 		while(temp != NULL) {
 			if (temp->next->data == target_node_t->data) {
 				temp2 = temp->next;
 				temp->next = temp2->next;
-				return SUCCESS;	
+				return SUCCESS;
 			}
 			temp = temp->next;
 		}
@@ -182,7 +182,7 @@ int delete(struct node_t **list_head, struct node_t* target_node_t)
 
 
 /*
- *the function insert_to_last takes the new node_t to be inserted and 
+ *the function insert_to_last takes the new node_t to be inserted and
  *and return a value (0 or 1 ), to check if the insertion was successful or not.(0: success, 1: fail).
 */
 int insert_to_last(struct node_t **list_head, struct node_t* new_node)
@@ -204,7 +204,7 @@ int insert_to_last(struct node_t **list_head, struct node_t* new_node)
 	return SUCCESS;
 
 	}
-	
+
 }
 
 
@@ -237,7 +237,7 @@ int reverse(struct node_t **list_head)
 		}
 		*list_head = previous;
 		return SUCCESS;
-	}	
+	}
 }
 
 
@@ -245,7 +245,7 @@ int reverse(struct node_t **list_head)
 
 /*
   *the function has_loop return 1 if the list has loop or 0 otherwise.
-  *it takes the head of the list as a parameter. 
+  *it takes the head of the list as a parameter.
 */
 int has_loop(struct node_t **list_head)
 {
@@ -268,7 +268,7 @@ int has_loop(struct node_t **list_head)
 
     	}
     }
-    return found;	
+    return found;
 }
 
 
@@ -302,8 +302,8 @@ struct node_t* creat_node_t(int data)
 
 
 
-/* 
-  print_list to show the elements in the list, it takes the head of the list as an input 
+/*
+  print_list to show the elements in the list, it takes the head of the list as an input
   and print the list .
 */
 void print_list(struct node_t **list_head)
@@ -329,7 +329,7 @@ int is_palindrome(struct node_t **list)
 
     struct node_t *original_list = *list;
 	struct linked_list *to_be_reversed_list = create_list();
-    
+
     copy_list(&original_list, &to_be_reversed_list->head);
 	reverse(&to_be_reversed_list->head);
     return is_euqal(&original_list, &to_be_reversed_list->head);
@@ -363,7 +363,7 @@ int has_intersection(struct node_t** list_1, struct node_t** list_2)
 
 
 /**
- * this is the deinition of find_second_largest function which takes the head of a list and returns the second largest 
+ * this is the deinition of find_second_largest function which takes the head of a list and returns the second largest
  * number in the list
 **/
 int find_second_largest(struct node_t** list_head, /* head of the list */
@@ -396,7 +396,7 @@ int num_of_nodes(struct node_t **list_head)
 	while(temp != NULL) {
 		count++;
 		temp = temp->next;
-	} 
+	}
 	return count;
 }
 
@@ -449,7 +449,7 @@ int copy_list(struct node_t **source, struct node_t **destination)
     for (j = 0; j < count; j++) /* insert the nodes from the array to the destination list */
     {
     	insert_to_last(&destination_list, nodes_copy[j]);
- 
+
     }
     *destination = nodes_copy[0];
     return SUCCESS;
@@ -464,12 +464,12 @@ void bubbleSort(struct node_t **list_head)
     struct node_t *temp_head = *list_head;
     struct node_t *temp2_head = *list_head;
 
-	int count = num_of_nodes(&temp_head); 
-	struct node_t* nodes_copy[count]; 
+	int count = num_of_nodes(&temp_head);
+	struct node_t* nodes_copy[count];
 	struct node_t* temp_node;
 
 	int k;
-    for (k = 0; k < count; k++)  
+    for (k = 0; k < count; k++)
     {
     	nodes_copy[k] = creat_node_t(temp_head->data);
     	temp_head = temp_head->next;
@@ -500,13 +500,13 @@ void bubbleSort(struct node_t **list_head)
     for (j = 0; j < count; j++) /* insert the nodes from the array to the destination list */
     {
     	insert_to_last(&temp2_head, nodes_copy[j]);
- 
+
     }
     *list_head = nodes_copy[0];
 
 
 }
- 
+
 
 int find_k_largest(struct node_t **list_head, int k, int* k_largest)
 {
